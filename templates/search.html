@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/style/search.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="maincontainer">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="static/homeimages/Ann_Arborness_2.jpg" alt="Michigan" class="img-responsive">
+          </div>
+          <div class="item">
+            <img src="static/homeimages/5140516407_1bdd9124a7_b.jpg" alt="Brown Jug" class="img-responsive">
+          </div>
+          <div class="item">
+            <img src="static/homeimages/1910_Michigan_Wolverines_football_team.jpg" alt="Brown Jug" class="img-responsive">
+          </div>
+          <div class="item">
+            <img src="static/homeimages/636097195473148909-738302243_university-of-michigan-campus-wallpaper-4.jpg" alt="JFK" class="img-responsive">
+          </div>
+          <div class="item">
+            <img src="static/homeimages/1970s_postcard.jpg" alt="JFK" class="img-responsive">
+          </div>
+        </div>
+        <div class="carousel-controls">
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-circle-arrow-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div id="one" class="form-inline">
+          <input id="address"class="form-control transparent-input" placeholder="SEARCH LOCATION..." type="text"> </input>
+          <a href="{{ url_for('markers')}}">
+          <button id="submit" type="submit" class="btn btn-default "><span class="glyphicon glyphicon-search"></span></button>
+         </a>
+        </div>
+      </div>
+    </div>
+    <script src="/static/script/search.js""></script>
+  </body>
+</html>

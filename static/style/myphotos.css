@@ -1,0 +1,25 @@
+      .navbar-inverse {
+        position: absolute;
+        background-color: #FFFFFF;
+        border-color: #FFFFFF;
+        color: #000000;
+        padding: 10px 0px 20px 0px;
+        font-size: 14px;
+        font-family: 'Roboto', helvetica, Arial, sans-serif;
+        font-weight: bold;
+        }
+        
+        .navbar-nav {
+          width: 100%;
+          text-align: center;
+        }
+      
+        .navbar-nav > li {
+          float: none;
+          display: inline-block;
+          padding: 0px 0px;
+        }
+        
+        .nav li:hover{
+        background-color:#B22222;
+        }

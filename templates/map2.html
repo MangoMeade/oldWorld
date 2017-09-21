@@ -1,0 +1,79 @@
+<!DOCTYPE html >
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/style/map22.css">
+    <title>Mapping the Old World</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" align="center">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><img src="static/uploads/logo_rouge_noir.jpg" id="menuimg"></li>
+            <li ><a href="{{ url_for('search') }}">HOME</a></li>
+            <li><a href="{{ url_for('markers') }}">MAP</a></li>
+            <li><a href="{{ url_for('index') }}">ADD PHOTO</a></li>
+            <li><a href="{{ url_for('login') }}">LOG IN</a></li>
+            <li><a href="{{ url_for('signup') }}">SIGN UP</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('index') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('myphotos') }}">MY PHOTOS</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container-fluid">
+        <div id="searchbox" class="form-group form-inline">
+          <input id="address"class="form-control" placeholder="Search location..." type="text"> </input>
+          <button id="submit" type="submit" class="btn btn-default "><span class="glyphicon glyphicon-search"></span></button>
+         </a>
+        </div>
+      </div>
+    <div id="floating-panel" >
+      <!-- Filter the markers by the years in which the photo was taken -->
+      <select id="selectyear" class="form-control" name="year" placeholder="Select All" type="text">
+        <option value="" placeholder="Select All" type="text">Select All</option>
+      <option value="Before 1900">Before 1900</option>
+      <option value="1901-1910">1901-1910</option>
+      <option value="1911-1920">1911-1920</option>
+      <option value="1921-1930">1921-1930</option>
+      <option value="1931-1940">1931-1940</option>
+      <option value="1941-1950">1941-1950</option>
+      <option value="1951-1960">1951-1960</option>
+      <option value="1961-1970">1961-1970</option>
+      <option value="1971-1980">1971-1980</option>
+      <option value="1981-1990">1981-1990</option>
+      <option value="1991-2000">1991-2000</option>
+      <option value="2001-2010">2001-2010</option>
+      <option value="2011-2020">2011-2020</option>
+    </select>
+    </div>
+    <div id="modal-background"></div>
+    <div id="map"></div>
+    </div>
+      <div id="overlay">
+        <!-- Close overlay -->
+        <a href="javascript:void(0)" class="closebtn" id="close">&times;</a>
+        <div id="image"></div>
+      
+      </div>
+      <div id="result"></div>
+    <script src="/static/script/map2.js""></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+    </script>
+  </body>
+</html>

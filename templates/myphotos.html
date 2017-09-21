@@ -1,0 +1,48 @@
+<html>
+<!DOCTYPE html >
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/style/myphotos.css">
+    <title>From Info Windows to a Database: Saving User-Added Form Data</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" align="center">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><img src="static/uploads/logo_rouge_noir.jpg" id="menuimg"></li>
+            <li ><a href="{{ url_for('search') }}">HOME</a></li>
+            <li><a href="{{ url_for('markers') }}">MAP</a></li>
+            <li><a href="{{ url_for('index') }}">ADD PHOTO</a></li>
+            <li><a href="{{ url_for('login') }}">LOG IN</a></li>
+            <li><a href="{{ url_for('signup') }}">SIGN UP</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('index') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('myphotos') }}">MY PHOTOS</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    {% for item in myList%}
+    <li>{{item.user_id }} {{item.id }} - {{item.title}}
+        <a href="">
+        <button type="button" class="btn btn-warning">Delete Photo</button>
+        </span>
+        </a>
+    </li>
+    <img src="{{ item.file }}"/>
+    {% endfor %}
+</html>
